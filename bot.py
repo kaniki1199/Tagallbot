@@ -43,7 +43,7 @@ async def start(event):
 
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "COMMANDS:/mentionall,/cancel. excample /mentionall hi add me your groups iam best tagger pro bot"
+  helptext = "COMMANDS:@all,/cancel. excample @all hi add me your groups iam best tagger pro bot"
   await event.reply(
     helptext,
     link_preview=False,
@@ -55,7 +55,7 @@ async def help(event):
     )
   )
   
-@client.on(events.NewMessage(pattern="^/mentionall ?(.*)"))
+@client.on(events.NewMessage(pattern="^@all ?(.*)"))
 async def mentionall(event):
   chat_id = event.chat_id
   if event.is_private:
