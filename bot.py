@@ -35,27 +35,27 @@ async def start(event):
     link_preview=False,
     buttons=(
        [
-        Button.url(' support', 'https://t.me/chucky_support'),
-        Button.url('creater', 'https://t.me/kittu_the_criminall')
+        Button.url(' support', 'https://t.me/asysourc'),
+        Button.url('creater', 'https://t.me/ssspc')
     ],
     )
   )
 
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "COMMANDS:@all,/cancel. excample @all hi add me your groups iam best tagger pro bot"
+  helptext = "COMMANDS:/all,/cancel. excample /all hi add me your groups iam best tagger pro bot"
   await event.reply(
     helptext,
     link_preview=False,
     buttons=(
       [
-        Button.url(' support', 'https://t.me/chucky_support'),
-        Button.url('creater', 'https://t.me/kittu_the_criminall')
+        Button.url(' support', 'https://t.me/asysourc'),
+        Button.url('creater', 'https://t.me/ssspc')
       ]
     )
   )
   
-@client.on(events.NewMessage(pattern="^@all ?(.*)"))
+@client.on(events.NewMessage(pattern="^/all ?(.*)"))
 async def mentionall(event):
   chat_id = event.chat_id
   if event.is_private:
