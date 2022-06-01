@@ -43,7 +43,7 @@ async def start(event):
 
 @client.on(events.NewMessage(pattern="^/help$"))
 async def help(event):
-  helptext = "COMMANDS:/all,/cancel. excample /all hi add me your groups iam best tagger pro bot"
+  helptext = "COMMANDS:/all,/no. excample /all hi add me your groups iam best tagger pro bot"
   await event.reply(
     helptext,
     link_preview=False,
@@ -104,7 +104,7 @@ async def mentionall(event):
       break
     usrnum += 1
     usrtxt += f"[{usr.first_name}](tg://user?id={usr.id}) "
-    if usrnum == 5:
+    if usrnum == 1:
       if mode == "text_on_cmd":
         txt = f"{usrtxt}\n\n{msg}"
         await client.send_message(chat_id, txt)
@@ -118,7 +118,7 @@ async def mentionall(event):
   except:
     pass
 
-@client.on(events.NewMessage(pattern="^/cancel$"))
+@client.on(events.NewMessage(pattern="^/no$"))
 async def cancel_spam(event):
   if not event.chat_id in spam_chats:
     return await event.respond('__There is no proccess on going...__')
